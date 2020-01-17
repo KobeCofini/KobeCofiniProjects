@@ -5,6 +5,8 @@
 //      they want to be translated, and then write the phrase of text for conversion. Then,         //
 //      after the output is created by the program, a new next file is created for printing         //
 //      the output separately.                                                                      //
+//      *UPDATE: Greek functionality in progress.                                                   //
+//                                                                                                  //
 //                                                                                                  //
 //              PROGRAMMER ID: Kobe Cofini                                                          //
 //              PROGRAM NAME: Morse Code File In Out.cpp                                            //
