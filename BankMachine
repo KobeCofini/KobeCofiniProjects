@@ -1,13 +1,13 @@
 //-------------------- Bank Machine - Withdraw, deposit, and view balance ------------------//
-//																							//
-// In this program, the user will use an ATM in order to access their funds. They will		//
-// have the choice to either withdraw their money that is in their account, deposit and		//
-// add more money to their balance, or simply view their balance separately.				//
-//																							//
-//				PROGRAM ID: Bank Machine.cpp												//
-//				PROGRAMMER NAME: Kobe Cofini												//
-//				RUN DATE: Thursday September 13 2018										//
-//																							//
+//                                                                                          //
+// In this program, the user will use an ATM in order to access their funds. They will      //
+// have the choice to either withdraw their money that is in their account, deposit and     //
+// add more money to their balance, or simply view their balance separately.                //
+//                                                                                          //
+//              PROGRAM ID: Bank Machine.cpp                                                //
+//              PROGRAMMER NAME: Kobe Cofini                                                //
+//              RUN DATE: Thursday September 13 2018                                        //
+//                                                                                          //
 //------------------------------------------------------------------------------------------//
 
 #include "stdafx.h"
