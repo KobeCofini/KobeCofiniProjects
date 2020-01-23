@@ -1,0 +1,200 @@
+// *NOTE: all values for calculations are arbitrary, and meant to be able to be changed easily
+// based on the specific needs of the geographical location.
+// (e.g.) noise pollution is given much more importance in the countryside than in the city centre
+// ECS - Environmental Credit System
+// Company Credit Score
+// --------------------
+// Company A: 184
+// Company B: 32
+// Company C: 154
+// Company D: -196
+// Company E: 470
+//
+// Individual Credit Score
+// -----------------------
+// Person A: 792
+// Person B: 326
+// Person C: 1851
+
+#include <iostream>
+
+using namespace std;
+
+int main();
+
+// ----- Governmental Functions ----- //
+int creditSystem( int companyID ); // Holds credit value of all factors and calculates a company's credit score
+
+// ----- Company functions ----- //
+int companyList( int companyID, int j ); // Holds company statistics
+
+// ----- Individual functions ----- //
+int consumerList( int personID, int j ); // Holds consumer statistics
+int consumerScore( int personID ); // Holds consumer credit score
+
+int main() {
+
+    cout << "ECS - Environmental Credit System" << endl;
+    cout << "Company Credit Score\n--------------------" << endl;
+    cout << "Company A: " << creditSystem(1) << endl; // return credit score of company A
+    cout << "Company B: " << creditSystem(2) << endl; // return credit score of company B
+    cout << "Company C: " << creditSystem(3) << endl; // return credit score of company C
+    cout << "Company D: " << creditSystem(4) << endl; // return credit score of company D
+    cout << "Company E: " << creditSystem(5) << endl; // return credit score of company E
+    cout << "\n";
+
+    cout << "Individual Credit Score\n-----------------------" << endl;
+    cout << "Person A: " << consumerScore(1) << endl; // return credit score of person A
+    cout << "Person B: " << consumerScore(2) << endl; // return credit score of person B
+    cout << "Person C: " << consumerScore(3) << endl; // return credit score of person C
+
+    return 0;
+}
+
+int creditSystem( int companyID ) {
+
+    int companyGrades[10];
+    int creditScore = 0;
+
+    // ---------- Bonuses Applied to the credit of a company, ---------- //
+    // rated by how much extra ecological good they do on top of their lowering of emissions //
+    // e.g. if a company plants 10,000 trees annually
+    int bonus = 20;
+
+    // ---------- Types of Pollution, Importance rated by amount of Environmental Impact ---------- //
+    // 1 // - Air Pollution - // Graded by heat absorbed per molecule, measured in cubic units of pollution
+    int air = 9;
+    // 2 // - Light Pollution - // Light pollution, measured in lux
+    int light = 4;
+    // 3 // - Noise Pollution - // Measured in decibels
+    int noise = 5;
+    // 4 // - Plastic Pollution - // Measured in tonnes
+    int plastic = 8;
+    // 5 // - Soil Contamination - // Measured in square kilometres
+    int soil = 6;
+    // 6 // - Radioactive Contamination - // Measured in becquerels per square meter
+    int rad = 10;
+    // 7 // - Thermal Pollution - //  Measured in Celsius
+    int heat = 3;
+    // 8 // - Visual Pollution - // Height of company structures, measured in metres
+    int visual = 2;
+    // 9 // - Water pollution - // Concentration of water pollution, measured in square metres
+    int water = 7;
+
+    for( int j = 0; j < 10; j++ ) {
+        companyGrades[j] = companyList( companyID, j );
+    }
+    
+    for( int i = 0; i < 10; i++ ) {
+        
+        switch( i ) {
+            case 0: creditScore += air * (companyGrades[i] - 5);
+                break;
+            case 1: creditScore +=  light * (companyGrades[i] - 5);
+                break;
+            case 2: creditScore += noise * (companyGrades[i] - 5);
+                break;
+            case 3: creditScore +=  plastic * (companyGrades[i] - 5);
+                break;
+            case 4: creditScore += soil * (companyGrades[i] - 5);
+                break;
+            case 5: creditScore +=  rad * (companyGrades[i] - 5);
+                break;
+            case 6: creditScore += heat * (companyGrades[i] - 5);
+                break;
+            case 7: creditScore +=  visual * (companyGrades[i] - 5);
+                break;
+            case 8: creditScore += water * (companyGrades[i] - 5);
+                break;
+            case 9: creditScore += bonus * (companyGrades[i]);
+                break;
+        }
+    }
+
+    return creditScore;
+}
+
+int companyList( int companyID, int j ) {
+
+    int companyGrade;
+
+    // all companies, rated on each type of environmental impact from 1 to 10
+    // *environmental impacts listed in creditSystem
+    int CompanyA[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5 }; // Company ID of 1
+    int CompanyB[] = { 2, 4, 6, 2, 1, 2, 6, 4, 10, 5, 3 }; // Company ID of 2
+    int CompanyC[] = { 3, 6, 9, 7, 8, 0, 6, 8, 10, 6, 7 }; // Company ID of 3
+    int CompanyD[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }; // Company ID of 4
+    int CompanyE[] = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 }; // Company ID of 5
+
+        switch( companyID ) {
+            case 1: companyGrade = CompanyA[j];
+                break;
+            case 2: companyGrade = CompanyB[j];
+                break;
+            case 3: companyGrade = CompanyC[j];
+                break;
+            case 4: companyGrade = CompanyD[j];
+                break;
+            case 5: companyGrade = CompanyE[j];
+                break;
+        }
+
+    return companyGrade;
+}
+
+int consumerList( int personID, int j ) {
+
+    int ProductConsumption;
+    
+    int PersonA[5] = { 10, 10, 10, 10, 10 };
+    int PersonB[5] = { 8, 12, 1, 25, 4 };
+    int PersonC[5] = { 14, 4, 6, 1, 25 };
+
+    switch( personID ) {
+        case 1: ProductConsumption = PersonA[j];
+            break;
+        case 2: ProductConsumption = PersonB[j];
+            break;
+        case 3: ProductConsumption = PersonC[j];
+            break;
+    }
+    
+    return ProductConsumption;
+}
+
+int consumerScore( int personID ) {
+
+    double consumption[5];
+    int creditScore = 0;
+
+    for( int j = 0; j < 5; j++ ) {
+
+        consumption[j] = consumerList(personID, j);
+    }
+
+    for( int j = 1; j < 6; j++ ) {
+
+        if( creditSystem(j) < 0 )
+            creditScore = creditScore;
+        else if( creditSystem(j) >= 0 && creditSystem(j) < 100 ) {
+            creditScore += 0.1 * double(consumption[j - 1]) * creditSystem(j);
+        }
+        else if( creditSystem(j) >= 100 && creditSystem(j) < 200 ) {
+            creditScore += 0.25 * double(consumption[j - 1]) * creditSystem(j);
+        }
+        else if( creditSystem(j) >= 200 && creditSystem(j) < 300 ) {
+            creditScore += 0.5 * double(consumption[j - 1]) * creditSystem(j);
+        }
+        else if( creditSystem(j) >= 300 && creditSystem(j) < 400 ) {
+            creditScore += 0.8 * double(consumption[j - 1]) * creditSystem(j);
+        }
+        else if( creditSystem(j) >= 400 && creditSystem(j) < 500 ) {
+            creditScore += 1.5 * double(consumption[j - 1]) * creditSystem(j);
+        }
+        else if( creditSystem(j) >= 500 ) {
+            creditScore += 2.0 * double(consumption[j - 1]) * creditSystem(j);
+        }
+    }
+
+    return creditScore / 10;
+}
