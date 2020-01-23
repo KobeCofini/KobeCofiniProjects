@@ -1,5 +1,5 @@
-// UPDATE: Upon further research of the C fscanf function, this program is not needed in order for
-// the Morse Code translation program to function.
+UPDATE: Upon further research of the C fscanf function, this program will not be needed in order for
+the Morse Code translation program to function, and will not be necessary to use for the updated translator.
 
 // This program is to be used in conjunction with the Morse Code Translator program.
 // It it necessary to input the words with a space in between each letter,
