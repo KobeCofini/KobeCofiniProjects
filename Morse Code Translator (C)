@@ -1,7 +1,3 @@
-Upon further editing of the Morse Code Translator, it has become apparent that in order to reach the code standard that I desire
-in terms of program efficiency, it would be more effective to overhaul the program in a new .cpp file.
-This will be uploaded shortly.
-
 //---- Morse Code Converter - Read input file, print and write output to screen and output file ----//
 //                                                                                                  //
 //      In this program, the user will use a text file that is converted from either English        //
@@ -12,8 +8,8 @@ This will be uploaded shortly.
 //                                                                                                  //
 //              PROGRAMMER ID: Kobe Cofini                                                          //
 //              PROGRAM NAME: Morse Code File In Out.cpp                                            //
-//              RUN DATE: 5 Dec 2018                                                                //
-//              UPDATE: Greek functionality in progress.                                            //
+//              RUN DATE: 5 Dec 2018 (Updated 2020)                                                 //
+//                                                                                                  //
 //                                                                                                  //
 //--------------------------------------------------------------------------------------------------//
 #include "stdafx.h"
@@ -515,7 +511,7 @@ void intro (void) // title screen function
     printf("\nOr, c m 6 ب ر ن ا م ج would output -... .-. -. .- --, meaning 'a program'");
     printf("\n\n\nIf you wish to quickly and easily convert your set of words into proper format to be read");
     printf("\nby this program, consider finding the 'letter gap' supplementary program to automatically enter");
-    printf("\na space between every letter. (*to be created in the near future)");
+    printf("\na space between every letter.");
 
     return; // return to main
 } // end intro
