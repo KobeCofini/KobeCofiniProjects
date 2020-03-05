@@ -36,7 +36,6 @@ int main (void) // naming of the main function
     // -------------- Declare Function Prototypes -------------- //
 
     void intro (void); // title screen function
-    //float TPS (int[9], int); // Throttle Position Sensor Calculations
     void printFile (char[1+1], int[1+1], char[500+1][500+1]); // Pass Calculations to Output File
     void endProgram (void); // End Program
 
