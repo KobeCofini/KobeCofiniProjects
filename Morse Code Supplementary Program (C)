@@ -1,3 +1,6 @@
+UPDATE: Upon further research of the C fscanf function, this program will not be needed in order for
+the Morse Code translation program to function, and will not be necessary to use for the updated translator.
+
 // This program is to be used in conjunction with the Morse Code Translator program.
 // It it necessary to input the words with a space in between each letter,
 // which can be very cumbersome to do manually for a user's input.txt file.
@@ -50,6 +53,3 @@ int main() {
 
     return 0;
 }
-
-UPDATE: Upon further research of the C fscanf function, this program will not be needed in order for
-the Morse Code translation program to function, and will not be necessary to use for the updated translator.
